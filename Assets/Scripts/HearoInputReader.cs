@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class HearoInputReader : MonoBehaviour
 {
-    private Hero _hero;
+    [SerializeField] private Hero _hero;
     
-    void Awake()
-    {
-        _hero = GetComponent<Hero>(); 
-    }
+    // void Awake()
+    // {
+    //     _hero = GetComponent<Hero>(); 
+    // }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        var horizontel = Input.GetAxis("Horizontal");
+        _hero.SetDirection(horizontel);
+        
+        /*if (Input.GetKey(KeyCode.A))
         {
            _hero.SetDirection(-1);
         }
@@ -23,6 +26,6 @@ public class HearoInputReader : MonoBehaviour
         else 
         {
             _hero.SetDirection(0);
-        }
+        }*/
     }
 }
