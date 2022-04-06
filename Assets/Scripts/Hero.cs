@@ -11,6 +11,10 @@ public class Hero : MonoBehaviour
     {
         _direction = direction;
     }
+    public void SaySomething()
+    {
+        Debug.Log("Something...");
+    }
 
     // Update is called once per frame
     private void Update()

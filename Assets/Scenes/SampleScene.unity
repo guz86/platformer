@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2894baf4ba5f14a4b9f47f76c8934261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 2
 --- !u!114 &167849868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +521,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d0270bb0-7b7c-4a50-b0e7-c5c61344d48c
     m_ActionName: Hero/HorizontalMovement[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 167849868}
+        m_TargetAssemblyTypeName: HeroInputReader, Assembly-CSharp
+        m_MethodName: OnSaySomething
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 87d928e9-84b8-45f4-9ca7-187d07cfdc15
+    m_ActionName: Hero/SaySomething
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77f622ec-aa29-456c-867c-e59e2b4ceda8
+    m_ActionName: Hero/Say[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
