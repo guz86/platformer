@@ -9,7 +9,10 @@ public class HeroInputReader : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        var horizontal = Input.GetAxis("Horizontal");
+        _hero.SetDirection(horizontal);
+        
+        /*if (Input.GetKey(KeyCode.A))
         {
             _hero.SetDirection(-1);
         }
@@ -20,6 +23,6 @@ public class HeroInputReader : MonoBehaviour
         else
         {
             _hero.SetDirection(0);
-        }
+        }*/
     }
 }
