@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,13 +28,28 @@ public class HeroInputReader : MonoBehaviour
         }
     }*/
 
-    private void OnHorizontalMovement(InputValue context)
+    private HeroInputAction _inputActions;
+    
+    private void Awake()
     {
-        var direction = context.Get<float>();
+        _inputActions = new HeroInputAction();
+        _inputActions.Hero.HorizontalMovement.performed += OnHorizontalMovement;
+        _inputActions.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
+        _inputActions.Hero.SaySomething.performed += OnSaySomething;
+    }
+
+    private void OnEnable()
+    {
+        _inputActions.Enable();
+    }
+
+    private void OnHorizontalMovement(InputAction.CallbackContext context)
+    {
+        var direction = context.ReadValue<float>();
         _hero.SetDirection(direction);
     }
 
-    private void OnSaySomething(InputValue context)
+    private void OnSaySomething(InputAction.CallbackContext context)
     {
             _hero.SaySomething();
     }
